@@ -1,5 +1,3 @@
-import java.util.*;
-
 public class Passenger {
     
     private  String name;
@@ -8,12 +6,32 @@ public class Passenger {
         this.name = name;
     }
 
-    public void boardCar(Passenger p){
-        if (this.passengersOnboard.contains(p)){
+    public String getName(){
+        return this.name;
+    }
+
+
+    public void boardCar(Car c){
+        try{ c.addPassenger(this);
+            
+        } catch(Exception e){
+            System.out.println(e);
 
         }
 
     }
 
+    public void getOffCar(Car c){
+        try{ c.removePassenger(this);
+            
+        } catch(Exception e){
+            System.out.println(e);
+
+        }
+
+    }
+    
+
 }
+
 

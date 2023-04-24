@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.ArrayList;
 
 public class Car {
    String name;
@@ -26,21 +26,21 @@ public class Car {
 
    public void addPassenger(Passenger p){
       if (this.passengersOnboard.contains(p)){ /** Already on the train */
-         throw new RuntimeException(p.name + "is already on this train");
+         throw new RuntimeException(p.getName() + "is already on this train");
       }
       this.passengersOnboard.add(p);
 
-      System.out.println(p.name + " was successfully addeed to the train ");
+      System.out.println(p.getName() + " was successfully addeed to the train ");
 
    }
 
    public void removePassenger(Passenger p){
       if (!this.passengersOnboard.contains(p)){ /** The passenger is not on the train */
-         throw new RuntimeException(p.name + "is not on this train");
+         throw new RuntimeException(p.getName() + "is not on this train");
       }
       this.passengersOnboard.remove(p);
 
-      System.out.println(p.name + " was successfully removed from this train" + "; " + (this.maxCapacity - this.passengersOnboard.size()+ "spots remaining.")) 
+      System.out.println(p.getName() + " was successfully removed from this train" + "; " + (this.maxCapacity - this.passengersOnboard.size()+ "spots remaining.")); 
       
    }
 
@@ -53,7 +53,10 @@ public class Car {
 
       
    }
-    
+    public static void main(String[] args) {
+      Car myCar = new Car(5);
+      myCar.printManifest();
+    }
 
 
    

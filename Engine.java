@@ -1,9 +1,6 @@
-import java.util.*;
-import java.lang.Double;
-
 public class Engine {
     private String FuelType;
-    Double currentFuelLevel;
+    private Double currentFuelLevel;
     Double maxFuelLevel;
 
     /** Accessor */
@@ -26,7 +23,7 @@ public class Engine {
 
     /** Prints fuel level left is it above 0. Decreases the current fuel level. */
     public void go(double currentFuelLevel, double x){
-        if (this.currentFuelLevel == 0 ) {
+        if (this.currentFuelLevel <= 0 ) {
             throw new RuntimeException("Your fuel is empty!");
             
         }
