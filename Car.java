@@ -23,7 +23,6 @@ public class Car {
       return this.maxCapacity - this.passengersOnboard.size();
 
    }
-
    public void addPassenger(Passenger p){
       if (this.passengersOnboard.contains(p)){ /** Already on the train */
          throw new RuntimeException(p.getName() + "is already on this train");
@@ -59,7 +58,6 @@ public class Car {
     }
 
 
-   
 
 }
 

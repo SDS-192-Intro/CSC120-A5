@@ -16,7 +16,7 @@ public class Engine {
     }
 
     /** Resets the Fuel Level to its full capacity */
-    
+
     public void refuel(double currentFuelLevel, double maxFuelLevel){
         currentFuelLevel = maxFuelLevel;
     }
