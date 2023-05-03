@@ -33,6 +33,7 @@ public class Car {
 
    }
 
+   /* Removes passenger from array */
    public void removePassenger(Passenger p){
       if (!this.passengersOnboard.contains(p)){ /** The passenger is not on the train */
          throw new RuntimeException(p.getName() + "is not on this train");
@@ -42,7 +43,7 @@ public class Car {
       System.out.println(p.getName() + " was successfully removed from this train" + "; " + (this.maxCapacity - this.passengersOnboard.size()+ "spots remaining.")); 
       
    }
-
+/* Prints all */
    public void printManifest(){
       if (this.passengersOnboard.size() == 0){
          throw new RuntimeException("This car is EMPTY!");
@@ -52,10 +53,6 @@ public class Car {
 
       
    }
-    public static void main(String[] args) {
-      Car myCar = new Car(5);
-      myCar.printManifest();
-    }
 
 
 
