@@ -4,7 +4,7 @@ public class Train {
     private final Engine engine;
     private ArrayList<Car> CarsAttached;
 
-
+/*Creates the Train */
     public Train(FuelType FuelType, double maxFuelLevel, int nCars, int maximum_capacity){
         this.engine = new Engine(FuelType, maxFuelLevel);
         this.CarsAttached = new ArrayList<Car>();
