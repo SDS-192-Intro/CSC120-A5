@@ -81,6 +81,7 @@ public class Train {
         carOne.removePassenger(Finn);
         System.out.println("Passenger kicked out.");
         carOne.printManifest();
+
     }
 }
 
