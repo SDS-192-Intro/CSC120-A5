@@ -1,33 +1,36 @@
 public class Engine {
-    private String FuelType;
-    private Double currentFuelLevel;
-    Double maxFuelLevel;
+    private FuelType FuelType;
+    private double currentFuelLevel;
+    private double maxFuelLevel;
 
     /** Accessor */
-    public String getFuelType(){
+    public FuelType getFuelType(){
         return this.FuelType;
     }
 
+    public double getFuelLevel(){
+        return this.currentFuelLevel;
+    }
+
     /** Constructor */
-    public Engine(String FuelType, Double currentFuelLevel, Double maxFuelLevel){
+    public Engine(FuelType FuelType, double maxFuelLevel){
         this.FuelType = FuelType;
-        this.currentFuelLevel = currentFuelLevel;
-        this.maxFuelLevel = maxFuelLevel;
+        this.currentFuelLevel = maxFuelLevel;
     }
 
     /** Resets the Fuel Level to its full capacity */
 
-    public void refuel(double currentFuelLevel, double maxFuelLevel){
-        currentFuelLevel = maxFuelLevel;
+    public void refuel(){
+        this.currentFuelLevel = this.maxFuelLevel;
     }
 
     /** Prints fuel level left is it above 0. Decreases the current fuel level. */
-    public void go(double currentFuelLevel, double x){
+    public void go(){
         if (this.currentFuelLevel <= 0 ) {
             throw new RuntimeException("Your fuel is empty!");
             
         }
-        this.currentFuelLevel -=x;
+        this.currentFuelLevel --;
         System.out.println("You have" + currentFuelLevel + "fuel left");
 
 

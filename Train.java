@@ -5,10 +5,10 @@ public class Train {
     private ArrayList<Car> CarsAttached;
 
 
-    public Train(FuelType fuelType, double fuelCapacity, int nCars, int maximum_capacity){
-        this.engine = new Engine(fuelType, fuelCapacity);
+    public Train(FuelType FuelType, double maxFuelLevel, int nCars, int maximum_capacity){
+        this.engine = new Engine(FuelType, maxFuelLevel);
         this.CarsAttached = new ArrayList<Car>();
-        for (int i=0 nCars; i++){
+        for (int i=0; i<nCars; i++){
             this.CarsAttached.add(new Car(maximum_capacity));
         }
 
@@ -18,16 +18,16 @@ public class Train {
         return this.engine;
     }
 
-    public Car getCar(i){
+    public Car getCar(int i){
         if (i>CarsAttached.size()){
             throw new RuntimeException(" 'i' is out of range; The train has "+ CarsAttached.size() + "cars .");
         }
-        return this.CarsAttached.get(i)
+        return this.CarsAttached.get(i);
     }
 
     public int getMaxCapacity(){
         int getMaxCapacity_value = 0;
-        for (i =0; i<CarsAttached.size(); i++) {
+        for (int i =0; i<CarsAttached.size(); i++) {
             getMaxCapacity_value = getMaxCapacity_value + CarsAttached.get(i).getCapacity();
         }
         return getMaxCapacity_value;
@@ -36,7 +36,7 @@ public class Train {
     public int seatsRemaining() {
        int seatsRemaining_value = 0; 
        for (int i=0; i<CarsAttached.size(); i++) {
-           seatsRemaining_value = seatsRemaining_value + Cars.get(i).seatsRemaining();
+           seatsRemaining_value = seatsRemaining_value + CarsAttached.get(i).seatsRemaining();
        }
        return seatsRemaining_value;
     }
@@ -49,17 +49,17 @@ public class Train {
 
 
     public static void main(String[] args) {
-        Train newTrain = new Train (FuelType.ELECTRIC,100.0, 5, 35)
+        Train newTrain = new Train (FuelType.ELECTRIC,100.0, 5, 35);
         newTrain.CarsAttached.add(new Car(15));
         try{
-            while true {
+            while (true) {
                 newTrain.engine.go();
             }
         } catch (Exception e){
             System.err.println(e.getMessage());
         }
         newTrain.engine.refuel();
-        System.out.println(newTrain.engine.getcurrentFuelLevel());
+        System.out.println(newTrain.engine.getFuelLevel());
 
         Passenger Steve = new Passenger("Steve Jobs");
         Passenger Finn = new Passenger("Finn");
